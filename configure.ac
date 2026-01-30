@@ -49,6 +49,9 @@ if test x$have_sdl_lib = xyes ; then
     CPPFLAGS="$CPPFLAGS $SDL_CFLAGS -I/usr/include"
 fi
 
+dnl Create conditional for Makefile.am
+AM_CONDITIONAL([USE_SDL], [test x$have_sdl_lib = xyes])
+
 dnl The target cpu checks
 AH_TEMPLATE(HAVE_MMX,[Define if you have mmx support])
 AC_MSG_CHECKING(for target cpu type)
