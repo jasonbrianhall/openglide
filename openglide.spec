@@ -44,7 +44,8 @@ the Glide 2.x API implemented by OpenGLide.
 ./configure --prefix=%{_prefix} \
     --libdir=%{_libdir} \
     --includedir=%{_includedir} \
-    --datadir=%{_datadir}
+    --datadir=%{_datadir} \
+    --disable-sdl
 %make_build
 
 # -------------------------------------------------------------
