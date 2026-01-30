@@ -54,7 +54,11 @@ TexDB.h
 # We substitute the libtool-specific library version in configure.in.
 libglide2x_la_LDFLAGS = -no-undefined -version-info $(LIBVERSION) $(DLLFLAGS)
 
-libglide2x_la_LIBADD = ./platform/linux/libplatform.la ./platform/sdl/libsdl.la ./platform/windows/libwindows.la
+# Conditional linking based on configure options
+libglide2x_la_LIBADD = ./platform/linux/libplatform.la ./platform/windows/libwindows.la
+if USE_SDL
+libglide2x_la_LIBADD += ./platform/sdl/libsdl.la
+endif
 
 install-data-hook:
 	cd $(DESTDIR)$(includedir) && \
