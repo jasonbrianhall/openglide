@@ -15,3 +15,5 @@ platform/error.h \
 platform/openglext.h \
 platform/window.h \
 platform/linux/platform.h
+
+libplatform_la_LIBADD = -lXxf86vm -lX11 -lGL -lGLX
